@@ -146,21 +146,31 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-8">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="email" class="form-control" id="name" placeholder="Muhammad Ben" />
+          <div class="alert alert-success alert-dismissible fade show d-none my-alert" role="alert">
+            <strong>Thanks!</strong> Your message has been sent.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" />
-          </div>
-          <div class="mb-3">
-            <label for="messäge" class="form-label">Message</label>
-            <textarea class="form-control" id="messäge" rows="3"></textarea>
-          </div>
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Send</button>
-          </div>
+          <form name="wpu-contact-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name" name="name" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email" />
+            </div>
+            <div class="mb-3">
+              <label for="messäge" class="form-label">Message</label>
+              <textarea class="form-control" id="messäge" rows="3" name="message"></textarea>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary btn-send mb-3">Send</button>
+              <button class="btn btn-primary btn-loading d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading...
+              </button>
+            </div>
+          </form>
         </div>
       </div>
 
@@ -181,5 +191,28 @@
     <!-- End of Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzyqOZYwY0JkiQZTBgHAH53arI7PRkOnSDgmTUkRY3PR3iPmMkmuzPNV9yVjOj-FHfNWQ/exec";
+      const form = document.forms["wpu-contact-form"];
+      const btnKirim = document.querySelector(".btn-send");
+      const btnLoading = document.querySelector(".btn-loading");
+      const myAlert = document.querySelector(".my-alert");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        btnLoading.classList.toggle("d-none");
+        btnKirim.classList.toggle("d-none");
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            btnLoading.classList.toggle("d-none");
+            btnKirim.classList.toggle("d-none");
+            myAlert.classList.toggle("d-none");
+            form.reset();
+            console.log("Success!", response);
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
   </body>
 </html>
