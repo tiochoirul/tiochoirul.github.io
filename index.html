@@ -10,6 +10,9 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -65,19 +68,19 @@
         </div>
         <div class="row justify-content-center fs-5 text-center">
           <div class="col-md-8">
-            <p>
+            <p data-aos="fade-down" data-aos-delay="200">
               I'm a Programmer from Indonesia. I have about 3 years of experience in programming. I have experience in C#, VB.NET, SQL, HTML, CSS and PHP. Currently, I am still studying for a bachelor's degree in Information Systems at the
               Indonesian Open University.
             </p>
             <p>
-              <span class="badge rounded-pill text-bg-primary">C#</span>
-              <span class="badge rounded-pill text-bg-secondary">VB.NET</span>
-              <span class="badge rounded-pill text-bg-success">HTML</span>
-              <span class="badge rounded-pill text-bg-danger">CSS</span>
-              <span class="badge rounded-pill text-bg-warning">BOOTSTRAP</span>
-              <span class="badge rounded-pill text-bg-info">PHP</span>
-              <span class="badge rounded-pill text-bg-light">SQL</span>
-              <span class="badge rounded-pill text-bg-dark">KOTLIN</span>
+              <span class="badge rounded-pill text-bg-primary" data-aos="fade-up">C#</span>
+              <span class="badge rounded-pill text-bg-secondary" data-aos="fade-up" data-aos-delay="50">VB.NET</span>
+              <span class="badge rounded-pill text-bg-success" data-aos="fade-up" data-aos-delay="100">HTML</span>
+              <span class="badge rounded-pill text-bg-danger" data-aos="fade-up" data-aos-delay="200">CSS</span>
+              <span class="badge rounded-pill text-bg-warning" data-aos="fade-up" data-aos-delay="200">BOOTSTRAP</span>
+              <span class="badge rounded-pill text-bg-info" data-aos="fade-up" data-aos-delay="100">PHP</span>
+              <span class="badge rounded-pill text-bg-light" data-aos="fade-up" data-aos-delay="50">Python</span>
+              <span class="badge rounded-pill text-bg-dark" data-aos="fade-up">KOTLIN</span>
             </p>
           </div>
         </div>
@@ -102,7 +105,7 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left" data-aos-delay="50">
               <img src="img/Projects/1.png" class="card-img-top" alt="Library Apps" />
               <div class="card-body">
                 <p class="card-text">Sudirman Munggur Madrasah Library Management Information System. Created using VB.NET language and Microsoft Access database.</p>
@@ -111,7 +114,7 @@
           </div>
 
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right" data-aos-delay="50">
               <img src="img/Projects/2.png" class="card-img-top" alt="Library Apps" />
               <div class="card-body">
                 <p class="card-text">An application for a restaurant that is used for customers, cashiers, waiters, chefs, and admins who use desktop devices.</p>
@@ -156,6 +159,30 @@
       </svg>
     </section>
     <!-- End of Projects -->
+
+    <!-- Sertifikat -->
+    <section id="certificate">
+      <div class="container">
+        <div class="row text-center mb-3">
+          <div class="col">
+            <h2>Certificate</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+          <div class="col-md-5" data-aos="flip-right" data-aos-delay="50">
+            <a href="img/kotlin.jpg">
+              <img src="img/kotlin.jpg" alt="Memulai Pemrogramman Dengan Kotlin" class="img-fluid certificate-img" />
+            </a>
+          </div>
+          <div class="col-md-5" data-aos="flip-right" data-aos-delay="50">
+            <a href="img/python.png">
+              <img src="img/python.png" alt="Kursus python" class="img-fluid certificate-img" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Sertifikat -->
 
     <!-- Contact Me -->
     <section id="contact">
@@ -212,6 +239,15 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true,
+      });
+    </script>
+
+    <!-- Form to Google Sheet -->
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbzyqOZYwY0JkiQZTBgHAH53arI7PRkOnSDgmTUkRY3PR3iPmMkmuzPNV9yVjOj-FHfNWQ/exec";
       const form = document.forms["wpu-contact-form"];
