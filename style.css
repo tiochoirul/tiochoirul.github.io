@@ -1,8 +1,8 @@
 .jumbotron {
-  padding-top: 15rem;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  padding-bottom: 20rem;
+  padding-top: 15%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 20%;
   background-color: #020c;
 }
 
@@ -15,8 +15,8 @@
   color: white;
 }
 section {
-  padding-top: 10rem;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  padding-bottom: 20rem;
+  padding-top: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-bottom: 20%;
 }
