@@ -2,11 +2,16 @@
 window.onscroll = function() {
     const header = document.querySelector('header');
     const fixedNav = header.offsetTop;
+    const toTop = document.querySelector('#to-top');
 
     if(window.pageYOffset > fixedNav) {
         header.classList.add('navbar-fixed');
+        toTop.classList.remove('hidden');
+        toTop.classList.add('flex');
     } else {
         header.classList.remove('navbar-fixed');
+        toTop.classList.add('hidden');
+        toTop.classList.remove('flex');
     }
 }
 
@@ -19,24 +24,23 @@ hamburger.addEventListener('click', function() {
     navMenu.classList.toggle('hidden');
 });
 
-//Form to Google Sheet
-const scriptURL = "https://script.google.com/macros/s/AKfycbzyqOZYwY0JkiQZTBgHAH53arI7PRkOnSDgmTUkRY3PR3iPmMkmuzPNV9yVjOj-FHfNWQ/exec";
-const form = document.forms["wpu-contact-form"];
-const btnKirim = document.querySelector("#submit");
-// const btnLoading = document.querySelector(".btn-loading");
-// const myAlert = document.querySelector(".my-alert");
+// Klik diluar hamburger
+window.addEventListener('click', function(e) {
+    if(e.target != hamburger && e.target != navMenu) {
+        hamburger.classList.remove('hamburger-active');
+        navMenu.classList.add('hidden');
+    }
+});
 
-form.addEventListener("submit", (e) => {
-e.preventDefault();
-btnLoading.classList.toggle("d-none");
-btnKirim.classList.toggle("d-none");
-fetch(scriptURL, { method: "POST", body: new FormData(form) })
-    .then((response) => {
-    //btnLoading.classList.toggle("d-none");
-    btnKirim.classList.toggle("d-none");
-    //myAlert.classList.toggle("d-none");
-    form.reset();
-    console.log("Success!", response);
-    })
-    .catch((error) => console.error("Error!", error.message));
+//Dark Mode Toggle
+const darkToggle = document.querySelector('#dark-toggle');
+const html = document.querySelector('html');
+
+darkToggle.addEventListener('click', function() {
+    if (darkToggle.checked) {
+        html.classList.add('dark');
+    }
+    else {
+        html.classList.remove('dark');
+    }
 });
