@@ -691,10 +691,6 @@ video {
   isolation: auto;
 }
 
-.-z-10 {
-  z-index: -10;
-}
-
 .z-10 {
   z-index: 10;
 }
@@ -813,6 +809,10 @@ video {
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .box-border {
@@ -2423,7 +2423,7 @@ video {
 
 .text-secondary {
   --tw-text-opacity: 1;
-  color: rgb(100 116 139 / var(--tw-text-opacity));
+  color: rgb(203 213 225 / var(--tw-text-opacity));
 }
 
 .text-sky-500 {
@@ -2992,19 +2992,14 @@ body {
   background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:bg-slate-800) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
-}
-
 :is(.dark .dark\:bg-slate-200) {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
-:is(.dark .dark\:text-white) {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+:is(.dark .dark\:bg-slate-800) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
 :is(.dark .dark\:text-dark) {
@@ -3012,22 +3007,22 @@ body {
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
 
+:is(.dark .dark\:text-slate-300) {
+  --tw-text-opacity: 1;
+  color: rgb(203 213 225 / var(--tw-text-opacity));
+}
+
+:is(.dark .dark\:text-white) {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 :is(.dark .dark\:shadow-slate-500) {
   --tw-shadow-color: #64748b;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
-:is(.dark .dark\:shadow-slate-300) {
-  --tw-shadow-color: #cbd5e1;
-  --tw-shadow: var(--tw-shadow-colored);
-}
-
 :is(.dark .hover\:dark\:text-dark):hover {
-  --tw-text-opacity: 1;
-  color: rgb(15 23 42 / var(--tw-text-opacity));
-}
-
-:is(.dark .dark\:hover\:text-dark:hover) {
   --tw-text-opacity: 1;
   color: rgb(15 23 42 / var(--tw-text-opacity));
 }
@@ -3156,10 +3151,6 @@ body {
 
   :is(.dark .lg\:dark\:bg-transparent) {
     background-color: transparent;
-  }
-
-  :is(.dark .lg\:dark\:bg-opacity-50) {
-    --tw-bg-opacity: 0.5;
   }
 
   :is(.dark .dark\:lg\:hover\:\[paint-order\:markers\]:hover) {
