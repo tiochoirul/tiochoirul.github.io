@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel = "icon" href = "/public/img/foto.png" type = "image/x-icon">
     <title>Portofolio | Tio Choirul Muhammad</title>
-    <link rel="stylesheet" href="/public/css/style.css" />
+    <link rel="stylesheet" href="/public/css/final.css" />
+
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('light')
+        }
+    </script>
 </head>
 <body>
     <!-- Header Start -->
@@ -42,19 +50,16 @@
                             <li class="group">
                                 <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                             </li>
-                            <li class="group">
-                                <span class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white"></span>
-                            </li>
-                            <li class="flex items-center pl-8">
-                                <div class="flex mt-8">
-                                    <span class="mr-2 text-base text-dark dark:text-white" >Light</span>
+                            <li class="flex mt-3 lg:mt-0 items-center pl-8">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-dark dark:text-white" >Light</span>
                                     <input type="checkbox" class="hidden" id="dark-toggle" />
                                     <label for="dark-toggle">
                                         <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
                                             <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
                                         </div>
                                     </label>
-                                    <span class="ml-2 text-base text-dark dark:text-white">Dark</span>
+                                    <span class="ml-2 text-sm text-dark dark:text-white">Dark</span>
                                 </div>
                             </li>
                         </ul>
@@ -220,7 +225,7 @@
                 <div class="mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Work Experiences</h4>
                     <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">💼Ever Worked at</h2>
-                    <p class="font-medium text-md text-secondary md:text-lg">
+                    <p class="font-medium text-md text-secondary md:text-lg dark:text-dark">
                         I previously worked on freelance Epicor ERP application development projects as a technical developer and worked full-time work as a Software Developer.
                     </p>
                 </div>
