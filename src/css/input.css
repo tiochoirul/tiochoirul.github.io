@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: Figtree, sans-serif;
 }
 
 .navbar-fixed {
